@@ -1,0 +1,137 @@
+name: Slack notifications
+
+on:
+  push:
+    branches:
+      - "**"
+  issues:
+    types:
+      - opened
+      - reopened
+      - closed
+
+permissions:
+  contents: read
+  issues: read
+
+jobs:
+  notify-slack:
+    name: Notify Slack channel SBF
+    runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+    steps:
+      - name: Check Slack webhook secret
+        if: ${{ env.SLACK_WEBHOOK_URL == '' }}
+        run: |
+          echo "SLACK_WEBHOOK_URL is not configured. Skipping Slack notification."
+
+      - name: Notify Slack about commits
+        if: ${{ github.event_name == 'push' && env.SLACK_WEBHOOK_URL != '' }}
+        run: |
+          set -euo pipefail
+
+          repo="${GITHUB_REPOSITORY}"
+          branch="${GITHUB_REF_NAME}"
+          actor="${GITHUB_ACTOR}"
+          compare_url="$(jq -r '.compare // ""' "$GITHUB_EVENT_PATH")"
+          commit_count="$(jq '.commits | length' "$GITHUB_EVENT_PATH")"
+          head_message="$(jq -r '.head_commit.message // "Sem mensagem" | split("\n")[0]' "$GITHUB_EVENT_PATH")"
+          head_url="$(jq -r '.head_commit.url // .repository.html_url' "$GITHUB_EVENT_PATH")"
+
+          payload="$(jq -n \
+            --arg repo "$repo" \
+            --arg branch "$branch" \
+            --arg actor "$actor" \
+            --arg compare_url "$compare_url" \
+            --arg head_url "$head_url" \
+            --argjson commit_count "$commit_count" \
+            --arg head_message "$head_message" \
+            '{
+              text: ("[SBF] " + $repo + ": " + ($commit_count|tostring) + " commit(s) em " + $branch),
+              blocks: [
+                {
+                  type: "section",
+                  text: {
+                    type: "mrkdwn",
+                    text: ("*Commit/push no projeto SBF*\n*" + $repo + "* recebeu " + ($commit_count|tostring) + " commit(s) em `" + $branch + "`.")
+                  }
+                },
+                {
+                  type: "section",
+                  fields: [
+                    { type: "mrkdwn", text: ("*Autor:*\n" + $actor) },
+                    { type: "mrkdwn", text: ("*Último commit:*\n<" + $head_url + "|" + $head_message + ">") }
+                  ]
+                },
+                {
+                  type: "actions",
+                  elements: [
+                    {
+                      type: "button",
+                      text: { type: "plain_text", text: "Ver comparação" },
+                      url: $compare_url
+                    }
+                  ]
+                }
+              ]
+            }')"
+
+          curl -sS -X POST \
+            -H "Content-Type: application/json" \
+            --data "$payload" \
+            "$SLACK_WEBHOOK_URL" \
+            >/dev/null
+
+      - name: Notify Slack about issue changes
+        if: ${{ github.event_name == 'issues' && env.SLACK_WEBHOOK_URL != '' }}
+        run: |
+          set -euo pipefail
+
+          action="$(jq -r '.action' "$GITHUB_EVENT_PATH")"
+          actor="${GITHUB_ACTOR}"
+          repo="${GITHUB_REPOSITORY}"
+          issue_number="$(jq -r '.issue.number' "$GITHUB_EVENT_PATH")"
+          issue_title="$(jq -r '.issue.title' "$GITHUB_EVENT_PATH")"
+          issue_url="$(jq -r '.issue.html_url' "$GITHUB_EVENT_PATH")"
+
+          case "$action" in
+            opened) action_pt="aberta" ;;
+            reopened) action_pt="reaberta" ;;
+            closed) action_pt="fechada" ;;
+            *) action_pt="$action" ;;
+          esac
+
+          payload="$(jq -n \
+            --arg repo "$repo" \
+            --arg actor "$actor" \
+            --arg action_pt "$action_pt" \
+            --arg issue_number "$issue_number" \
+            --arg issue_title "$issue_title" \
+            --arg issue_url "$issue_url" \
+            '{
+              text: ("[SBF] Issue #" + $issue_number + " " + $action_pt + ": " + $issue_title),
+              blocks: [
+                {
+                  type: "section",
+                  text: {
+                    type: "mrkdwn",
+                    text: ("*Issue " + $action_pt + " no projeto SBF*\n<" + $issue_url + "|#" + $issue_number + " " + $issue_title + ">")
+                  }
+                },
+                {
+                  type: "section",
+                  fields: [
+                    { type: "mrkdwn", text: ("*Repositório:*\n" + $repo) },
+                    { type: "mrkdwn", text: ("*Autor da ação:*\n" + $actor) }
+                  ]
+                }
+              ]
+            }')"
+
+          curl -sS -X POST \
+            -H "Content-Type: application/json" \
+            --data "$payload" \
+            "$SLACK_WEBHOOK_URL" \
+            >/dev/null
