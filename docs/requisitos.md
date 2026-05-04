@@ -95,5 +95,8 @@ Além da landing page, o projeto deve acompanhar informações essenciais para a
 - Os clientes devem participar do Slack do projeto ou apenas de reuniões de validação?
 - O evento terá submissão de trabalhos?
 - O evento emitirá certificados?
-- Qual ferramenta será usada para construir a versão final: Antigravity, Codex, Figma Maker ou outra?
-- Qual será a hospedagem, domínio ou URL oficial?
+
+## Decisões Técnicas
+
+- **Ferramenta de construção:** Astro com Tailwind CSS (abordagem Zero-JS para performance máxima).
+- **Hospedagem e Domínio:** GitHub Pages (Configurado via `astro.config.mjs` com o base path `/sbf`).

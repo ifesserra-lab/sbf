@@ -1,0 +1,228 @@
+---
+import {
+  ArrowRight,
+  CreditCard,
+  QrCode,
+  AlertCircle,
+  FileText,
+} from "@lucide/astro";
+
+const base = import.meta.env.BASE_URL;
+
+const fees = [
+  {
+    category: "Alunos de graduação do Ensino Superior",
+    price: "R$ 30,00",
+    isento: false,
+  },
+  {
+    category: "Graduados no Ensino Superior",
+    price: "R$ 100,00",
+    isento: false,
+  },
+  {
+    category: "Professores do Ensino Básico (rede privada)",
+    price: "R$ 50,00",
+    isento: false,
+  },
+  {
+    category:
+      "Professores do Ensino Básico (redes pública municipal e estadual)",
+    price: null,
+    isento: true,
+  },
+  {
+    category: "Alunos do Ensino Básico (redes pública e privada)",
+    price: null,
+    isento: true,
+  },
+  { category: "Sócios da SBF", price: null, isento: true },
+  {
+    category:
+      "Alunos de graduação e pós-graduação inscritos nos Programas de Assistência Estudantil",
+    price: null,
+    isento: true,
+  },
+];
+---
+
+<section id="inscricao" class="bg-gradient-to-b from-slate-50 to-blue-50/30">
+  <div class="py-20 px-4 sm:px-6 max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="mb-10">
+      <h2 class="text-slate-900 text-3xl font-bold mb-2">Inscrições</h2>
+      <p class="text-slate-600">
+        Inscrições até <strong>10 de julho de 2026</strong> • Vagas para Comunicação
+        Oral limitadas
+      </p>
+    </div>
+
+    <!-- Instructions box -->
+    <div
+      class="mb-10 p-5 bg-white border-2 border-blue-200 rounded-xl shadow-md"
+    >
+      <div class="flex items-center gap-3 mb-3">
+        <div
+          class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-md"
+        >
+          <FileText class="w-5 h-5 text-white" />
+        </div>
+        <h3 class="text-slate-900 font-semibold text-base">
+          Como se inscrever
+        </h3>
+      </div>
+      <ul class="space-y-2 text-sm text-slate-700 list-disc list-inside">
+        <li>
+          Preencha o formulário de inscrição abaixo. O pagamento da taxa deve
+          ser efetuado até <strong>10/07/2026</strong>.
+        </li>
+        <li>
+          Caso opte por <strong>Pôster ou Comunicação Oral</strong>, envie seu
+          resumo para
+          <a href="mailto:ecf.sbf@gmail.com" class="text-blue-600 font-medium"
+            >ecf.sbf@gmail.com</a
+          >
+          até <strong>10/07/2026</strong>, indicando claramente a modalidade
+          desejada: <strong>Pôster</strong> ou <strong>Comunicação Oral</strong
+          >.
+        </li>
+        <li>
+          Vagas para <strong>Comunicação Oral são limitadas</strong>, conforme a
+          Programação do evento.
+        </li>
+        <li>
+          Após a submissão do formulário, você receberá um e-mail com o valor da
+          inscrição e as instruções de pagamento.
+        </li>
+      </ul>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="mb-10">
+      <a
+        href={`${base}/inscricoes`}
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold text-sm shadow-lg shadow-blue-300/40 transition-all duration-200 hover:-translate-y-0.5"
+      >
+        <ArrowRight class="w-4 h-4" />
+        Acessar Formulário de Inscrição
+      </a>
+    </div>
+
+    <!-- Fees Table -->
+    <div class="mb-10">
+      <h3 class="text-slate-900 text-xl font-semibold mb-4">
+        Taxa de Inscrição
+      </h3>
+      <div class="overflow-x-auto -mx-4 sm:mx-0">
+        <table
+          class="w-full bg-white border-2 border-slate-200 rounded-xl shadow-md min-w-[360px]"
+        >
+          <thead>
+            <tr class="bg-gradient-to-r from-slate-100 to-slate-50">
+              <th
+                class="p-3 sm:p-4 text-left text-slate-700 font-semibold border-b-2 border-slate-200 text-sm"
+              >
+                Categoria
+              </th>
+              <th
+                class="p-3 sm:p-4 text-center text-slate-700 font-semibold border-b-2 border-l border-slate-200 text-sm w-32"
+              >
+                Taxa
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              fees.map((fee) => (
+                <tr class="hover:bg-slate-50 transition-colors">
+                  <td class="p-3 sm:p-4 text-slate-700 font-medium border-b border-slate-100 text-sm">
+                    {fee.category}
+                  </td>
+                  <td class="p-3 sm:p-4 text-center border-b border-l border-slate-100">
+                    {fee.isento ? (
+                      <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-green-100 border border-green-300 text-green-700">
+                        Isento
+                      </span>
+                    ) : (
+                      <span class="text-blue-700 font-bold text-base">
+                        {fee.price}
+                      </span>
+                    )}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Payment Methods -->
+    <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-10">
+      <div class="p-5 bg-white border-2 border-slate-200 rounded-xl shadow-md">
+        <div class="flex items-center gap-3 mb-3">
+          <div
+            class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-md"
+          >
+            <QrCode class="w-5 h-5 text-white" />
+          </div>
+          <h4 class="text-slate-900 font-medium">PIX</h4>
+        </div>
+        <p class="text-slate-600 text-sm">
+          Pagamento instantâneo via PIX. Chave e instruções serão enviadas por
+          e-mail após a submissão do formulário.
+        </p>
+      </div>
+      <div class="p-5 bg-white border-2 border-slate-200 rounded-xl shadow-md">
+        <div class="flex items-center gap-3 mb-3">
+          <div
+            class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-md"
+          >
+            <CreditCard class="w-5 h-5 text-white" />
+          </div>
+          <h4 class="text-slate-900 font-medium">Cartão de Crédito</h4>
+        </div>
+        <p class="text-slate-600 text-sm">
+          Parcelamento em até 3x sem juros via PagSeguro. Instruções disponíveis
+          após resposta por e-mail.
+        </p>
+      </div>
+    </div>
+
+    <!-- Alert -->
+    <div
+      class="flex items-start gap-3 p-4 bg-white border-2 border-blue-200 rounded-xl max-w-2xl mx-auto shadow-md"
+    >
+      <AlertCircle class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+      <div class="text-sm text-slate-700">
+        <p class="text-slate-900 font-medium mb-1">Informações Importantes</p>
+        <ul class="space-y-1 text-xs list-disc list-inside">
+          <li>
+            Resumos para Pôster ou Comunicação Oral: envie para
+            <a href="mailto:ecf.sbf@gmail.com" class="text-blue-600 font-medium"
+              >ecf.sbf@gmail.com</a
+            >
+            até <strong>10/07/2026</strong>
+          </li>
+          <li>
+            Indique claramente no e-mail a modalidade: <strong>Pôster</strong> ou
+            <strong>Comunicação Oral</strong>
+          </li>
+          <li>
+            Vagas para Comunicação Oral são limitadas — consulte a Programação
+            do evento
+          </li>
+          <li>
+            Participantes isentos devem comprovar a condição no formulário de
+            inscrição
+          </li>
+          <li>
+            Dúvidas? Entre em contato: <a
+              href="mailto:ecf.sbf@gmail.com"
+              class="text-blue-600 font-medium">ecf.sbf@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

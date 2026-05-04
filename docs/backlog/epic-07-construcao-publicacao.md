@@ -26,14 +26,14 @@ Riscos e dependências:
 - Definição tardia de hospedagem ou domínio.
 
 Status:
-Em refinamento
+Em desenvolvimento
 
 ## User Stories
 
 | US | Nome | Responsável | Prioridade | Estimativa | Status | Tasks |
 | --- | --- | --- | --- | --- | --- | ---: |
-| US 7.1 | Construir landing page | Equipe técnica | Alta | G | A fazer | 3 |
-| US 7.2 | Preparar publicação do site | Equipe técnica | Alta | M | A fazer | 2 |
+| US 7.1 | Construir landing page | Equipe técnica | Alta | G | Em desenvolvimento | 3 |
+| US 7.2 | Preparar publicação do site | Equipe técnica | Alta | M | Em desenvolvimento | 2 |
 
 <a id="us-71-construir-landing-page"></a>
 
@@ -64,14 +64,14 @@ Dependências:
 - Decisão sobre ferramenta de construção.
 
 Status:
-A fazer
+Em desenvolvimento
 
 ### Tasks Da US 7.1
 
 | Task | Resultado esperado | Status |
 | --- | --- | --- |
-| TASK 7.1.1: Escolher abordagem de construção | Ferramenta e fluxo de construção definidos. | A fazer |
-| TASK 7.1.2: Implementar estrutura da landing page | Landing page implementada com as seções aprovadas. | A fazer |
+| TASK 7.1.1: Escolher abordagem de construção | Ferramenta e fluxo de construção definidos. | Concluído |
+| TASK 7.1.2: Implementar estrutura da landing page | Landing page implementada com as seções aprovadas. | Em desenvolvimento |
 | TASK 7.1.3: Validar responsividade e conteúdo | Página revisada em desktop e mobile. | A fazer |
 
 Validação:
@@ -107,13 +107,13 @@ Dependências:
 - Aprovação da organização.
 
 Status:
-A fazer
+Em desenvolvimento
 
 ### Tasks Da US 7.2
 
 | Task | Resultado esperado | Status |
 | --- | --- | --- |
-| TASK 7.2.1: Definir hospedagem e URL | Ambiente de publicação definido. | A fazer |
+| TASK 7.2.1: Definir hospedagem e URL | Ambiente de publicação definido. | Concluído |
 | TASK 7.2.2: Publicar e testar site | Site publicado e validado em URL acessível. | A fazer |
 
 Validação:
