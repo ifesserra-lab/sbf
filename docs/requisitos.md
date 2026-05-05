@@ -81,6 +81,7 @@ Além da landing page, o projeto deve acompanhar informações essenciais para a
 - Regras de inscrição, submissão e certificação, se aplicável.
 - Plano de divulgação até o evento.
 - Rotina de atualização do site após o lançamento do MVP.
+- Pesquisa e implementação de ferramenta de tickets para suporte aos usuários do site.
 
 ## Perguntas Abertas
 
@@ -95,5 +96,8 @@ Além da landing page, o projeto deve acompanhar informações essenciais para a
 - Os clientes devem participar do Slack do projeto ou apenas de reuniões de validação?
 - O evento terá submissão de trabalhos?
 - O evento emitirá certificados?
-- Qual ferramenta será usada para construir a versão final: Antigravity, Codex, Figma Maker ou outra?
-- Qual será a hospedagem, domínio ou URL oficial?
+
+## Decisões Técnicas
+
+- **Ferramenta de construção:** Astro com Tailwind CSS (abordagem Zero-JS para performance máxima).
+- **Hospedagem e Domínio:** GitHub Pages (Configurado via `astro.config.mjs` com o base path `/sbf`).

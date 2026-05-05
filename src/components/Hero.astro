@@ -1,0 +1,62 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center" style={`background-image: url('${base}/image.png')`}></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-white/85 to-white/50 to-white/70"></div>
+
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+    <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-white/90 rounded-full px-4 py-2 mb-8">
+      <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+      <span class="text-sm font-medium text-slate-700">Inscrições abertas até 10 de julho</span>
+    </div>
+
+    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-slate-900">
+      V Encontro Capixaba<br />
+      <span class="text-blue-600">de Física</span>/SBF 2026
+    </h1>
+
+    <p class="text-lg sm:text-xl text-slate-700 max-w-2xl mx-auto mb-8">
+      De 09 a 11 de setembro de 2026 | Instituto Federal do Espírito Santo | Serra, ES
+    </p>
+
+    <p class="text-base sm:text-lg text-slate-600 max-w-xl mx-auto mb-10">
+      Junte-se a pesquisadores, estudantes e especialistas para três dias de descobertas,
+      debates e networking no coração da física brasileira.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href={`${base}/inscricoes`}
+        class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold text-base hover:bg-blue-700 transition-colors w-full sm:w-auto"
+      >
+        Fazer Inscrição
+      </a>
+      <a
+        href={`${base}/cronograma`}
+        class="bg-slate-100 text-slate-700 border border-white/30 px-8 py-3 rounded-full font-semibold text-base hover:bg-white/20 transition-colors w-full sm:w-auto"
+      >
+        Ver Cronograma
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 gap-6 mt-16 pt-10 border-t border-white/10">
+      <div class="text-center">
+        <div class="text-3xl sm:text-4xl font-bold text-slate-700">15</div>
+        <div class="text-sm text-slate-700/90 mt-1">Palestrantes confirmados</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl sm:text-4xl font-bold text-slate-700">3</div>
+        <div class="text-sm text-slate-700/90 mt-1">Dias de evento</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>
