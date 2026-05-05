@@ -25,6 +25,7 @@ Status sugeridos: `A fazer`, `Em refinamento`, `Pronto para desenvolvimento`, `E
 | EPIC 6: Protótipo e Validação com Clientes | [#6](https://github.com/ifesserra-lab/sbf/issues/6) | Design/produto | [epic-06-prototipo-validacao.md](backlog/epic-06-prototipo-validacao.md) | Validar estrutura, conteúdo e direção visual antes da implementação. | Alta | Em refinamento | 2 | 2 |
 | EPIC 7: Construção, Validação e Publicação do Site | [#7](https://github.com/ifesserra-lab/sbf/issues/7) | Equipe técnica | [epic-07-construcao-publicacao.md](backlog/epic-07-construcao-publicacao.md) | Construir, validar e publicar a landing page dentro do prazo de 1 mês. | Alta | Em desenvolvimento | 2 | 5 |
 | EPIC 8: Comunicação e Divulgação até Setembro | [#8](https://github.com/ifesserra-lab/sbf/issues/8) | Comunicação/organização | [epic-08-comunicacao-divulgacao.md](backlog/epic-08-comunicacao-divulgacao.md) | Divulgar o evento e manter o site atualizado até setembro. | Média | Em refinamento | 2 | 4 |
+| EPIC 9: Suporte ao Cliente e Sistema de Tickets | - | Equipe de produto | [epic-09-suporte-tickets.md](backlog/epic-09-suporte-tickets.md) | Pesquisar e implementar uma ferramenta de tickets para suporte no site. | Alta | A fazer | 2 | 4 |
 
 ## Tabela De User Stories
 
@@ -45,6 +46,8 @@ Status sugeridos: `A fazer`, `Em refinamento`, `Pronto para desenvolvimento`, `E
 | US 7.2 | [#21](https://github.com/ifesserra-lab/sbf/issues/21) | EPIC 7 | Equipe técnica | Preparar publicação do site | Alta | Em desenvolvimento | [EPIC 7](backlog/epic-07-construcao-publicacao.md#us-72-preparar-publicacao-do-site) |
 | US 8.1 | [#22](https://github.com/ifesserra-lab/sbf/issues/22) | EPIC 8 | Comunicação/organização | Planejar comunicação do evento | Média | A fazer | [EPIC 8](backlog/epic-08-comunicacao-divulgacao.md#us-81-planejar-comunicacao-do-evento) |
 | US 8.2 | [#23](https://github.com/ifesserra-lab/sbf/issues/23) | EPIC 8 | Comunicação/organização | Manter site atualizado até o evento | Média | A fazer | [EPIC 8](backlog/epic-08-comunicacao-divulgacao.md#us-82-manter-site-atualizado-ate-o-evento) |
+| US 9.1 | - | EPIC 9 | Equipe de produto | Pesquisar ferramentas de tickets | Alta | A fazer | [EPIC 9](backlog/epic-09-suporte-tickets.md#us-91-pesquisar-ferramentas-de-tickets) |
+| US 9.2 | - | EPIC 9 | Equipe técnica | Implementar ferramenta de tickets no site | Alta | A fazer | [EPIC 9](backlog/epic-09-suporte-tickets.md#us-92-implementar-ferramenta-de-tickets-no-site) |
 
 ## Regras De Manutenção
 

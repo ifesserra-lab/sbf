@@ -11,7 +11,7 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -26,4 +26,21 @@ const { title } = Astro.props;
       <slot />
     </main>
   </body>
+
+  <script>
+    /*
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "0f384f51-0984-47d9-9840-64d0502a4a18";
+
+    window.$crisp.push(["set", "locale", "pt-br"]);
+
+    (function () {
+      const d = document;
+      const s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = true;
+        d.getElementsByTagName("head")[0].appendChild(s);
+   })();
+   */
+  </script>
 </html>

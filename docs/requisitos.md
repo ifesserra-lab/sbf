@@ -81,6 +81,7 @@ Além da landing page, o projeto deve acompanhar informações essenciais para a
 - Regras de inscrição, submissão e certificação, se aplicável.
 - Plano de divulgação até o evento.
 - Rotina de atualização do site após o lançamento do MVP.
+- Pesquisa e implementação de ferramenta de tickets para suporte aos usuários do site.
 
 ## Perguntas Abertas
 
