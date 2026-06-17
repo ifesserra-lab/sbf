@@ -36,7 +36,8 @@ const schedule = [
       {
         time: "10:30",
         title: "Palestra",
-        speaker: "Ronaldo Lobato: Uma Rede Neural Bayesiana para a Equação de Estado de Estrelas de Nêutrons",
+        speaker:
+          "Ronaldo Lobato: Uma Rede Neural Bayesiana para a Equação de Estado de Estrelas de Nêutrons",
         type: "talk",
         location: "Auditório Principal",
       },
@@ -50,7 +51,8 @@ const schedule = [
       {
         time: "15:00",
         title: "Palestra",
-        speaker: "Eduardo Marino: Teoria para a Supercondutividade de Alta Temperatura em Cupratos",
+        speaker:
+          "Eduardo Marino: Teoria para a Supercondutividade de Alta Temperatura em Cupratos",
         type: "talk",
         location: "Auditório Principal",
       },
@@ -64,7 +66,8 @@ const schedule = [
       {
         time: "17:10",
         title: "Palestra",
-        speaker: "Marcos Gonçalves Menezes: Impulsionando a física de Floquet com campos excitônicos",
+        speaker:
+          "Marcos Gonçalves Menezes: Impulsionando a física de Floquet com campos excitônicos",
         type: "talk",
         location: "Auditório Principal",
       },
@@ -90,7 +93,8 @@ const schedule = [
       {
         time: "08:30",
         title: "Palestra",
-        speaker: "Ernani Vassoler",
+        speaker:
+          "João Paulo Erthal: Prêmio Nobel de Física: potencialidades no ensino de Física",
         type: "talk",
         location: "Auditório Principal",
       },
@@ -104,7 +108,8 @@ const schedule = [
       {
         time: "11:00",
         title: "Palestra",
-        speaker: "Ivã Gurgel: Ciência e Diplomacia: A Postura Internacionalista de Niels Bohr e seu papel nas origens do CERN",
+        speaker:
+          "Ivã Gurgel: Ciência e Diplomacia: A Postura Internacionalista de Niels Bohr e seu papel nas origens do CERN",
         type: "talk",
         location: "Auditório Principal",
       },
@@ -112,7 +117,8 @@ const schedule = [
       {
         time: "14:00",
         title: "Palestra",
-        speaker: "Yutao Xing: Aplicações de microscopia eletrônica de alta resolução: da física fundamental à ciência dos materiais",
+        speaker:
+          "Yutao Xing: Aplicações de microscopia eletrônica de alta resolução: da física fundamental à ciência dos materiais",
         type: "talk",
         location: "Auditório Principal",
       },
@@ -179,7 +185,8 @@ const schedule = [
       {
         time: "14:00",
         title: "Palestra",
-        speaker: "Guilherme Lima:  Modelagem computacional, construção e caracterização de sensores fotoacústicos para detecção de moléculas em níveis de traços",
+        speaker:
+          "Guilherme Lima:  Modelagem computacional, construção e caracterização de sensores fotoacústicos para detecção de moléculas em níveis de traços",
         type: "talk",
         location: "Auditório Principal",
       },
@@ -199,14 +206,16 @@ const schedule = [
       {
         time: "16:50",
         title: "Palestra",
-        speaker: "Jorge Luiz Gonzalez: Uma abordagem para computação neuromorfica usando materiais quânticos",
+        speaker:
+          "Jorge Luiz Gonzalez: Uma abordagem para computação neuromorfica usando materiais quânticos",
         type: "talk",
         location: "Auditório Principal",
       },
       {
         time: "17:50",
         title: "Palestra",
-        speaker: "Antônio Varandas: Molecules and Materials in Quantum Theory: A Green-Theoretical Perspective",
+        speaker:
+          "António Varandas: Molecules and Materials in Quantum Theory: A Green-Theoretical Perspective",
         type: "talk",
         location: "Auditório Principal",
       },
@@ -318,7 +327,9 @@ const typeConfig: Record<
               class={`flex items-center gap-2 px-3 py-1.5 rounded-lg ${cfg.bg} border border-slate-200 type-legend-item`}
             >
               <div class={`w-3 h-3 rounded ${cfg.iconBg}`} />
-              <span class={`text-xs font-medium ${cfg.color}`}>{cfg.label}</span>
+              <span class={`text-xs font-medium ${cfg.color}`}>
+                {cfg.label}
+              </span>
             </span>
           );
         })
@@ -412,12 +423,54 @@ const typeConfig: Record<
 
   // Type config for legend updates
   const typeConfigMap = {
-    opening: { bg: "bg-violet-50", bgActive: "bg-violet-100", iconBg: "bg-violet-500", color: "text-violet-700", colorActive: "text-violet-900", label: "Abertura" },
-    talk: { bg: "bg-blue-50", bgActive: "bg-blue-100", iconBg: "bg-blue-500", color: "text-blue-700", colorActive: "text-blue-900", label: "Palestra" },
-    break: { bg: "bg-emerald-50", bgActive: "bg-emerald-100", iconBg: "bg-emerald-500", color: "text-emerald-700", colorActive: "text-emerald-900", label: "Intervalo" },
-    poster: { bg: "bg-cyan-50", bgActive: "bg-cyan-100", iconBg: "bg-cyan-500", color: "text-cyan-700", colorActive: "text-cyan-900", label: "Apresentação" },
-    award: { bg: "bg-amber-50", bgActive: "bg-amber-100", iconBg: "bg-amber-500", color: "text-amber-700", colorActive: "text-amber-900", label: "Premiação" },
-    social: { bg: "bg-pink-50", bgActive: "bg-pink-100", iconBg: "bg-pink-500", color: "text-pink-700", colorActive: "text-pink-900", label: "Encerramento" }
+    opening: {
+      bg: "bg-violet-50",
+      bgActive: "bg-violet-100",
+      iconBg: "bg-violet-500",
+      color: "text-violet-700",
+      colorActive: "text-violet-900",
+      label: "Abertura",
+    },
+    talk: {
+      bg: "bg-blue-50",
+      bgActive: "bg-blue-100",
+      iconBg: "bg-blue-500",
+      color: "text-blue-700",
+      colorActive: "text-blue-900",
+      label: "Palestra",
+    },
+    break: {
+      bg: "bg-emerald-50",
+      bgActive: "bg-emerald-100",
+      iconBg: "bg-emerald-500",
+      color: "text-emerald-700",
+      colorActive: "text-emerald-900",
+      label: "Intervalo",
+    },
+    poster: {
+      bg: "bg-cyan-50",
+      bgActive: "bg-cyan-100",
+      iconBg: "bg-cyan-500",
+      color: "text-cyan-700",
+      colorActive: "text-cyan-900",
+      label: "Apresentação",
+    },
+    award: {
+      bg: "bg-amber-50",
+      bgActive: "bg-amber-100",
+      iconBg: "bg-amber-500",
+      color: "text-amber-700",
+      colorActive: "text-amber-900",
+      label: "Premiação",
+    },
+    social: {
+      bg: "bg-pink-50",
+      bgActive: "bg-pink-100",
+      iconBg: "bg-pink-500",
+      color: "text-pink-700",
+      colorActive: "text-pink-900",
+      label: "Encerramento",
+    },
   } as const;
 
   type EventType = keyof typeof typeConfigMap;
@@ -426,7 +479,7 @@ const typeConfig: Record<
   const dayTypes: EventType[][] = [
     ["opening", "talk", "break", "poster", "social"],
     ["talk", "poster", "break", "award", "social"],
-    ["talk", "poster", "break", "social"]
+    ["talk", "poster", "break", "social"],
   ];
 
   // Active type filters (can have multiple)
@@ -436,19 +489,21 @@ const typeConfig: Record<
   function updateLegend(dayIndex: number) {
     const types: EventType[] = dayTypes[dayIndex];
     currentDayIndex = dayIndex;
-    typeLegend.innerHTML = types.map(type => {
-      const cfg = typeConfigMap[type];
-      const isActive = activeFilters.has(type);
-      const bgClass = isActive ? cfg.bgActive : cfg.bg;
-      const colorClass = isActive ? cfg.colorActive : cfg.color;
-      return `<button data-type="${type}" class="flex items-center gap-2 px-3 py-1.5 rounded-lg ${bgClass} border border-slate-200 type-legend-item transition-colors ${isActive ? 'ring-2 ring-offset-1 ring-' + cfg.iconBg.replace('bg-', '') : ''}">
+    typeLegend.innerHTML = types
+      .map((type) => {
+        const cfg = typeConfigMap[type];
+        const isActive = activeFilters.has(type);
+        const bgClass = isActive ? cfg.bgActive : cfg.bg;
+        const colorClass = isActive ? cfg.colorActive : cfg.color;
+        return `<button data-type="${type}" class="flex items-center gap-2 px-3 py-1.5 rounded-lg ${bgClass} border border-slate-200 type-legend-item transition-colors ${isActive ? "ring-2 ring-offset-1 ring-" + cfg.iconBg.replace("bg-", "") : ""}">
         <div class="w-3 h-3 rounded ${cfg.iconBg}"></div>
         <span class="text-xs font-medium ${colorClass}">${cfg.label}</span>
       </button>`;
-    }).join("");
+      })
+      .join("");
 
     // Re-attach click handlers
-    typeLegend.querySelectorAll(".type-legend-item").forEach(btn => {
+    typeLegend.querySelectorAll(".type-legend-item").forEach((btn) => {
       btn.addEventListener("click", () => {
         const type = btn.getAttribute("data-type") as EventType;
         if (activeFilters.has(type)) {
@@ -466,7 +521,7 @@ const typeConfig: Record<
     dayContents.forEach((content, idx) => {
       if (idx !== currentDayIndex) return;
       const items = content.querySelectorAll(".schedule-item");
-      items.forEach(item => {
+      items.forEach((item) => {
         const itemType = item.getAttribute("data-type") as EventType;
         if (activeFilters.size === 0 || activeFilters.has(itemType)) {
           item.classList.remove("hidden");

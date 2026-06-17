@@ -1,6 +1,5 @@
 ---
 import { ExternalLink } from "@lucide/astro";
-import Avatar from "./Avatar.astro";
 
 import belichImg from "../assets/participants/belich.png";
 import earthalImg from "../assets/participants/earthal.png";
@@ -8,9 +7,7 @@ import geandersonImg from "../assets/participants/geanderson.png";
 import giuseppeDitoImg from "../assets/participants/giuseppe-dito.png";
 import guilhermeLimaImg from "../assets/participants/guilherme-lima.png";
 import ivaGurgelImg from "../assets/participants/iva-gurgel.png";
-import jazielImg from "../assets/participants/jaziel.png";
 import jorgeImg from "../assets/participants/jorge.png";
-import julioImg from "../assets/participants/julio.png";
 import marceloSegattoImg from "../assets/participants/marcelo-segatto.png";
 import marcosMenezesImg from "../assets/participants/marcos-menezes.png";
 import marinoImg from "../assets/participants/marino.png";
@@ -30,7 +27,7 @@ interface Speaker {
 
 const speakers: Speaker[] = [
   {
-    name: "Antônio Varandas",
+    name: "António Varandas",
     affil: "UC, Portugal · UFES",
     topic:
       "Molecules and Materials in Quantum Theory: A Green-Theoretical Perspective.",
@@ -66,7 +63,8 @@ const speakers: Speaker[] = [
   {
     name: "Guilherme Lima",
     affil: "UFES",
-    topic: "Modelagem computacional, construção e caracterização de sensores fotoacústicos para detecção de moléculas em níveis de traços.",
+    topic:
+      "Modelagem computacional, construção e caracterização de sensores fotoacústicos para detecção de moléculas em níveis de traços.",
     tag: "Estrutura Eletrônica",
     curriculumUrl: "http://lattes.cnpq.br/5847088789120872",
     imageRef: guilhermeLimaImg.src,
@@ -151,16 +149,70 @@ const speakers: Speaker[] = [
 
 const committeeMembers = [
   {
-    name: "Jaziel Goulart Coelho",
-    role: "Comunicação e Coodernação Geral",
+    name: "Bruna Bragato",
+    role: "Comitê Organizador",
     institution: "UFES",
-    image: jazielImg.src,
+  },
+  {
+    name: "Fabio Arthur Leão de Souza",
+    role: "Comitê Organizador",
+    institution: "UFES",
+  },
+  {
+    name: "Fernando Néspoli Nassar Pansini",
+    role: "Comitê Científico",
+    institution: "UFES",
+  },
+  {
+    name: "Jaziel Goulart Coelho",
+    role: "Comitê Organizador e Científico",
+    institution: "UFES",
   },
   {
     name: "Júlio César Fabris",
-    role: "Comitê Científico",
+    role: "Comitê Organizador e Científico",
     institution: "UFES",
-    image: julioImg.src,
+  },
+  {
+    name: "Leonardo Aguiar do Amaral",
+    role: "Comitê Organizador",
+    institution: "IFES",
+  },
+  {
+    name: "Leonardo Matiazzi Corrêa",
+    role: "Comitê Organizador",
+    institution: "IFES",
+  },
+  {
+    name: "Marta Amorim",
+    role: "Comitê Organizador",
+    institution: "IFES",
+  },
+  {
+    name: "Paulo Sérgio dos Santos Júnior",
+    role: "Comitê Organizador",
+    institution: "IFES",
+  },
+  {
+    name: "Rhayla Mendes",
+    role: "Comitê Organizador",
+    institution: "UFES",
+  },
+
+  {
+    name: "Richard Junior Manuel Godinez Tello",
+    role: "Comitê Organizador",
+    institution: "IFES",
+  },
+  {
+    name: "Stéfani Vitória Faller Ganda",
+    role: "Comitê Organizador",
+    institution: "UFES",
+  },
+  {
+    name: "Wendel Silva Paz",
+    role: "Comitê Organizador e Científico",
+    institution: "UFES",
   },
 ];
 ---
@@ -222,10 +274,11 @@ const committeeMembers = [
           committeeMembers.map((member, i) => (
             <div class="flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-lg">
               {/* <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0"> */}
-              <Avatar src={member.image} size={36} />
               {/* </div> */}
               <div>
-                <p class="text-slate-900 text-sm font-medium">{member.name}</p>
+                <p class="text-slate-900 text-sm font-medium">
+                  {member.name} ({member.institution})
+                </p>
                 <p class="text-slate-600 text-xs">{member.role}</p>
               </div>
             </div>
