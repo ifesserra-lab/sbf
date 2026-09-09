@@ -11,7 +11,7 @@ interface Edition {
   label: string;
 }
 
-const base = "https://ifesserra-lab.github.io/sbf";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const urlRegistration = "https://forms.gle/owj7QWVkc5bkpEUN8";
 
@@ -19,6 +19,7 @@ const navLinks: NavLink[] = [
   { href: `${base}/`, label: "Início" },
   { href: `${base}/cronograma`, label: "Cronograma" },
   { href: `${base}/palestrantes`, label: "Palestrantes" },
+  { href: `${base}/equipe`, label: "Equipe" },
   { href: `${base}/hospedagem`, label: "Hospedagem" },
   { href: `${base}/inscricoes`, label: "Inscrições" },
 ];

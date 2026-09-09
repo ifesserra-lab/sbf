@@ -1,0 +1,105 @@
+---
+import { ExternalLink } from "@lucide/astro";
+
+import leonardoAmaralImg from "../assets/equipe/leonardo-amaral.jpg";
+import fabioSouzaImg from "../assets/equipe/fabio-souza.jpg";
+import giordanaSperandioImg from "../assets/equipe/giordana-sperandio.jpg";
+import martaMendesImg from "../assets/equipe/marta-mendes.jpg";
+import richardTelloImg from "../assets/equipe/richard-tello.jpg";
+import semFotoImg from "../assets/equipe/sem-foto.jpg";
+
+interface TeamMember {
+  name: string;
+  bio?: string;
+  imageRef?: string;
+  curriculumUrl?: string;
+}
+
+const team: TeamMember[] = [
+  {
+    name: "Leonardo Aguiar do Amaral",
+    bio: "Doutor e graduado (Licenciatura e Bacharelado) em Física, e mestre em Engenharia Mecânica pela Universidade Federal do Espírito Santo (UFES). Atualmente é Professor EBTT no Instituto Federal do Espírito Santo (IFES). Atua de forma integrada no ensino, na pesquisa e na extensão na interface entre Física Computacional e Engenharia, com ênfase em robótica. Possui experiência em sistemas complexos, network science, criticalidade, teoria da percolação e modelos small-world, além do desenvolvimento e aplicação de métodos numéricos e simulação computacional por Finite Element Analysis (FEA) e Computational Fluid Dynamics (CFD).",
+    imageRef: leonardoAmaralImg.src,
+    curriculumUrl: "http://lattes.cnpq.br/3747190706760201",
+  },
+  {
+    name: "Fábio Arthur Leão de Souza",
+    bio: "Doutor em Física pela Universidade Federal do Espírito Santo (UFES), 2017, com período de doutorado-sanduíche na Uppsala University, Suécia, mestre (2013) e graduado (2010) em Física pela UFES. É Professor do Ensino Básico, Técnico e Tecnológico do Instituto Federal do Espírito Santo (Ifes). Atua em Física da Matéria Condensada Computacional e Ciência de Materiais, com ênfase na modelagem atomística de materiais e sistemas nanoestruturados, empregando métodos de primeiros princípios baseados na Teoria do Funcional da Densidade (DFT), abordagens de transporte eletrônico quântico e simulações multiescala. Suas pesquisas envolvem a investigação de propriedades estruturais, eletrônicas, magnéticas, ópticas e de transporte em materiais bidimensionais, heteroestruturas e interfaces, incluindo fenômenos de interação em escala atômica e aplicações em sensoriamento, nanotecnologia e sistemas de interesse ambiental e biológico. Possui experiência na coordenação de projetos de pesquisa e extensão, na formação de estudantes e em colaborações científicas nacionais e internacionais.",
+    imageRef: fabioSouzaImg.src,
+    curriculumUrl: "http://lattes.cnpq.br/1140962711692698",
+  },
+  {
+    name: "Giordana dos Santos Sperandio",
+    bio: "Professora, pesquisadora e entusiasta da educação como ferramenta de transformação social. Mestra em Educação Profissional e Tecnológica, especialista em Língua Inglesa e graduada em Letras, sua atuação articula ensino, pesquisa e extensão nas áreas de educação de jovens e adultos, formação profissional e reconhecimento de saberes, com foco em inclusão e valorização das trajetórias formativas. Possui certificação internacional pelo Niagara College e experiência em Relações Internacionais. Atua no ensino de línguas e possui experiência em projetos de extensão voltados à arte, cultura e protagonismo feminino. Dedica-se a promover uma educação mais inclusiva, crítica, voltada à cidadania global e conectada aos desafios contemporâneos.",
+    imageRef: giordanaSperandioImg.src,
+    curriculumUrl: "http://lattes.cnpq.br/6550053640492591",
+  },
+  {
+    name: "Leonardo Matiazzi Corrêa",
+    bio: "Possui graduação em Geografia (Licenciatura e Bacharelado) pela Universidade Federal do Espírito Santo (UFES, 2003), especialização lato sensu em Ciências Humanas e Desenvolvimento Regional pelo CCHN/UFES (2006), mestrado em Educação pelo PPGE/UFES (2011) e doutorado em Geografia pelo PPGG/UFF (2025), com ênfase na linha de pesquisa em Ordenamento Ambiental Territorial. Atualmente é professor do Ensino Básico, Técnico e Tecnológico no Instituto Federal do Espírito Santo (IFES), atuando no campus Serra como docente efetivo na área de Geografia e Geociências. Coordena o Núcleo de Estudos Afro-Brasileiros e Indígenas (NEABI) do campus Serra. Participa dos programas de pós-graduação lato sensu. Nas licenciaturas, possui experiência em educação ambiental, formação de professores, ensino de Geografia, cultura, território e políticas educacionais. No bacharelado (Inscrição no CREA-ES/ES-015062/D) atua nas áreas de Geociências e Geografia Física, com ênfase em Estudos Ambientais Integrados, abordando temas como ordenamento territorial, bacias hidrográficas, degradação ambiental, climatologia, desertificação, variabilidade climática, modelagem do uso da terra e cobertura vegetal, séries temporais, sensoriamento remoto e geoprocessamento.",
+    curriculumUrl: "http://lattes.cnpq.br/1879691887687737",
+  },
+  {
+    name: "Marta Talitha Carvalho Freire Mendes",
+    bio: "Mestra em Ciência da Computação pela Universidade Federal do Espírito Santo (UFES, 2012). Atualmente também atua como professora no Instituto Federal do Espírito Santo (IFES).",
+    imageRef: martaMendesImg.src,
+    curriculumUrl: "http://lattes.cnpq.br/3770740577508464",
+  },
+  {
+    name: "Richard Junior Manuel Godinez Tello",
+    imageRef: richardTelloImg.src,
+    bio: "Possui graduação em Engenharia Eletrônica (2009) pela Universidad Nacional Mayor de San Marcos (UNMSM), diploma revalidado pela UFES, mestrado (2013) e doutorado (2016) em Engenharia Elétrica, com ênfase em Robótica e Automação Inteligente, pela Universidade Federal do Espírito Santo (UFES). Possui também especialização em Práticas Pedagógicas para Professores (Ifes/Cefor, 2018). Em 2014, realizou estágio técnico-científico na Ryerson University (atual Toronto Metropolitan University), no Canadá. Sua atuação em pesquisa abrange Robótica de Reabilitação, Processamento de Sinais Biológicos (EEG e EMG), Interfaces Cérebro-Computador (BCI), Visão Computacional, Inteligência Artificial e Tecnologias Assistivas, com aplicações em Robôs Autônomos, Automação Inteligente e Cidades Inteligentes. Atua como Professor Efetivo no Instituto Federal de Educação, Ciência e Tecnologia do Espírito Santo (IFES), na área de Engenharia Elétrica II, no Campus Serra. Desde fevereiro de 2026, exerce a função de Coordenador de Pesquisa do Ifes-Campus Serra. Desde março de 2016, integra o Grupo de Pesquisa NERA (Núcleo de Estudos em Robótica e Automação) do Campus Serra, tendo exercido a vice-liderança entre setembro de 2016 e fevereiro de 2020, e a liderança nos períodos de fevereiro de 2020 a agosto de 2021 e, novamente, desde abril de 2023 até o presente. Entre março de 2017 e fevereiro de 2020, integrou o Colegiado do Mestrado Profissional em Engenharia de Controle e Automação (ProPECAut) do Ifes Campus Serra e, posteriormente, entre fevereiro de 2020 e outubro de 2022, o Colegiado do Mestrado em Computação Aplicada. Em julho de 2026, retornou ao ProPECAut como docente permanente.",
+    curriculumUrl: "http://lattes.cnpq.br/3966230569744918",
+  },
+];
+
+const sortedTeam = [...team].sort((a, b) =>
+  a.name.localeCompare(b.name, "pt-BR"),
+);
+---
+
+<section id="equipe" class="bg-gradient-to-b from-slate-50 to-blue-50/30">
+  <div class="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+    <div class="mb-12">
+      <h2 class="text-slate-900 text-3xl font-bold mb-2">Equipe</h2>
+      <p class="text-slate-600">Professores responsáveis pelo evento</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {
+        sortedTeam.map((member) => (
+          <div class="bg-white border border-slate-200 rounded-lg overflow-hidden">
+            <div class="relative h-67 bg-slate-100 flex items-center justify-center">
+              <img
+                src={member.imageRef ?? semFotoImg.src}
+                alt={member.name}
+                class="w-full h-full object-cover object-center"
+              />
+              {member.curriculumUrl && (
+                <a
+                  href={member.curriculumUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="absolute bottom-2 right-2 px-2 py-2 text-blue-600 bg-background/88 border border-blue-600 text-sm gap-1 flex rounded-full">
+                    <ExternalLink size={18} /> Abrir Currículo
+                  </span>
+                </a>
+              )}
+            </div>
+            <div class="p-4">
+              <h3 class="text-slate-900 font-semibold mb-2">{member.name}</h3>
+              {member.bio && (
+                <div class="border-t border-slate-200 pt-2 mt-2">
+                  <p class="text-slate-600 text-sm leading-snug">
+                    {member.bio}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
